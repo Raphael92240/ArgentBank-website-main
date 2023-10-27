@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import Logo from '@/Assets/Images/argentBankLogo.png.png';
+import Logo from '@/Assets/Images/argentBankLogo.png';
+import './Header.css';
 
 const Header = () => {
     return (
@@ -9,7 +10,7 @@ const Header = () => {
                 <NavLink to="/home" className="main-nav-logo" >
                     <img
                         class="main-nav-logo-image"
-                        src="./img/argentBankLogo.png"
+                        src={Logo}
                         alt="Argent Bank Logo"
                     />
                     <h1 class="sr-only">Argent Bank</h1>

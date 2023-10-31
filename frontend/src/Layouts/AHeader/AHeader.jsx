@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Logo from '@/Assets/Images/argentBankLogo.png';
 import './header.css';
 
-const Header = () => {
+const AHeader = () => {
     return (
         <header>
             <nav class="main-nav">
@@ -16,12 +16,15 @@ const Header = () => {
                     <h1 class="sr-only">Argent Bank</h1>
                 </NavLink>
                 <div>
-                    <NavLink to="/SignIn" className="main-nav-item" ><i class="fa fa-user-circle"> </i>
-                        Sign In</NavLink>
+                    <NavLink to="/admin/AuthUser" className="main-nav-item" ><i class="fa fa-user-circle"></i>
+                        Tony</NavLink>
+
+                    <NavLink to="/Home" className="main-nav-item" ><i class="fa fa-sign-out"></i>
+                        Sign Out</NavLink>
                 </div>
             </nav>
         </header>
     );
 };
 
-export default Header;
+export default AHeader;

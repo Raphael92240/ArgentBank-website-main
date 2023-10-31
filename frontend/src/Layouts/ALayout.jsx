@@ -1,12 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Header from '@/Layouts/Header/Header.jsx';
-import Footer from '@/Layouts/Footer/Footer.jsx'
+import Header from '@/Layouts/AHeader/AHeader.jsx';
+import Footer from '@/Layouts/AFooter/AFooter.jsx'
 
-const Layout = () => {
+const ALayout = () => {
     return (
-        <div className='layout'>
+        <div className='Alayout'>
             <Header />
             <Outlet />
             <Footer />
@@ -14,4 +14,4 @@ const Layout = () => {
     );
 };
 
-export default Layout;
+export default ALayout;

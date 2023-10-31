@@ -1,15 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
-import { Home } from '@/Pages/Public/Index'
 import { AuthUser } from '@/Pages/Auth/Index'
 
-import Layout from '@/Layouts/Layout'
+import ALayout from '@/Layouts/ALayout'
 
 const router = () => {
     return (
         <Routes>
-            <Route element={<Layout />}>
-                <Route path="/home" element={<Home />} />
+            <Route element={<ALayout />}>
                 <Route path="/AuthUser" element={<AuthUser />} />
 
             </Route>

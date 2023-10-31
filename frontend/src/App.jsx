@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import PublicRouter from '@/Pages/Public/Router.jsx';
+import AdminRouter from '@/Pages/Auth/Router.jsx';
 
-import "@/Assets/Style/main.css"
+
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/*" element={<PublicRouter />} />
+                    <Route path="/admin/*" element={<AdminRouter />} />
                 </Routes>
             </BrowserRouter>
         </div>

@@ -1,25 +1,54 @@
-import React from 'react';
-import './signin.css';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
+
+import { accountService } from '@/_Services/accountService';
+
+import './signin.css';
 
 const SignIn = () => {
+    let navigate = useNavigate()
+
+    const [credentials, setcredentials] = useState({
+        email: '',
+        password: ''
+    })
+
+    const onChangelogin = (e) => {
+        setcredentials({
+            ...credentials,
+            [e.target.name]: e.target.value
+        })
+    }
+    const onSubmit = (e) => {
+        e.preventDefault()
+        axios.post('http://localhost:3001/api/v1/user/login', credentials)
+            .then((res) => {
+                console.log(res)
+                accountService.saveToken(res.data.access_token)
+                navigate('/admin/AuthUser')
+            })
+            .catch((err) => { console.log(err) });
+    }
+
     return (
         <main className="main bg-dark">
             <div className="sign-in-content">
                 <i className="fa fa-user-circle sign-in-icon"></i>
                 <h1>Sign In</h1>
-                <form>
+                <form onSubmit={onSubmit}>
                     <div className="input-wrapper">
-                        <label for="username">Username</label
-                        ><input type="text" id="username" />
+                        <label htmlFor="username">Username</label>
+                        <input type="text" name='email' id="username" value={credentials.email} onChange={onChangelogin} />
                     </div>
                     <div className="input-wrapper">
-                        <label for="password">Password</label
-                        ><input type="password" id="password" />
+                        <label htmlFor="password">Password</label>
+                        <input type="password" name='password' id="password" value={credentials.password} onChange={onChangelogin} />
                     </div>
                     <div className="input-remember">
-                        <input type="checkbox" id="remember-me" /><label for="remember-me"
-                        >Remember me</label>
+                        <input type="checkbox" id="remember-me" />
+                        <label htmlFor="remember-me">Remember me</label>
                     </div>
                     <Link to="/admin/AuthUser" className="sign-in-button">Sign In</Link>
                     <button className="sign-in-button">Sign In</button>

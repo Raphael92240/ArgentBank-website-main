@@ -13,6 +13,7 @@ let logout = () => {
 
 let islogged = () => {
     let token = localStorage.getItem('token')
+    console.log(token)
     return !!token
 }
 

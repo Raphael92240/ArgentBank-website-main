@@ -2,6 +2,8 @@ import React from 'react';
 import iconchat from '@/Assets/Images/icon-chat.png';
 import iconmoney from '@/Assets/Images/icon-money.png';
 import iconsecurity from '@/Assets/Images/icon-security.png';
+import Hero from '@/Components/hero/Hero.jsx';
+import Card from '@/Components/card/Card.jsx';
 
 import "./home.css";
 
@@ -10,48 +12,20 @@ const Home = () => {
     return (
         <main>
             <section className="homepage">
-                <div className="hero">
-                    <section className="hero-content">
-                        <h2 className="sr-only">Promoted Content</h2>
-                        <p className="subtitle">No fees.</p>
-                        <p className="subtitle">No minimum deposit.</p>
-                        <p className="subtitle">High interest rates.</p>
-                        <p className="text">Open a savings account with Argent Bank today!</p>
-                    </section>
-                </div>
+                <Hero title="Promoted Content"
+                    p1="No fees."
+                    p2="No minimum deposit."
+                    p3="High interest rates."
+                    text="Open a savings account with Argent Bank today!"
+                />
+
                 <section className="features">
                     <h2 className="sr-only">Features</h2>
-                    <div className="feature-item">
-                        <img src={iconchat} alt="Chat Icon" className="feature-icon" />
-                        <h3 className="feature-item-title">You are our #1 priority</h3>
-                        <p>
-                            Need to talk to a representative? You can get in touch through our
-                            24/7 chat or through a phone call in less than 5 minutes.
-                        </p>
-                    </div>
-                    <div className="feature-item">
-                        <img
-                            src={iconmoney}
-                            alt="Chat Icon"
-                            className="feature-icon"
-                        />
-                        <h3 className="feature-item-title">More savings means higher rates</h3>
-                        <p>
-                            The more you save with us, the higher your interest rate will be!
-                        </p>
-                    </div>
-                    <div className="feature-item">
-                        <img
-                            src={iconsecurity}
-                            alt="Chat Icon"
-                            className="feature-icon"
-                        />
-                        <h3 className="feature-item-title">Security you can trust</h3>
-                        <p>
-                            We use top of the line encryption to make sure your data and money
-                            is always safe.
-                        </p>
-                    </div>
+                    <Card image={iconchat} title="You are our #1 priority" text="Need to talk to a representative? You can get in touch through our
+                            24/7 chat or through a phone call in less than 5 minutes." />
+                    <Card image={iconmoney} title="More savings means higher rates" text="The more you save with us, the higher your interest rate will be!" />
+                    <Card image={iconsecurity} title="Security you can trust" text="We use top of the line encryption to make sure your data and money
+                            is always safe." />
                 </section>
             </section>
         </main>

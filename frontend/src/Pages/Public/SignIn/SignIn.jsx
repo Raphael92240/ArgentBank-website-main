@@ -26,7 +26,7 @@ const SignIn = () => {
         axios.post('http://localhost:3001/api/v1/user/login', credentials)
             .then((res) => {
                 console.log(res)
-                accountService.saveToken(res.data.access_token)
+                accountService.saveToken(res.data.body.token)
                 navigate('/admin/AuthUser')
             })
             .catch((err) => { console.log(err) });

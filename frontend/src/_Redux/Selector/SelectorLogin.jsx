@@ -1,0 +1,1 @@
+export const SelectorLogin = state => state.Login

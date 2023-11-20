@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
 
 import { accountService } from '@/_Services/accountService';
+
+import { useDispatch } from 'react-redux';
+
 
 import './signin.css';
 
 const SignIn = () => {
-    let navigate = useNavigate()
 
     const [credentials, setcredentials] = useState({
         email: '',
         password: ''
     })
+    const dispatch = useDispatch()
+    let navigate = useNavigate()
+
 
     const onChangelogin = (e) => {
         setcredentials({
@@ -23,13 +27,19 @@ const SignIn = () => {
     }
     const onSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/api/v1/user/login', credentials)
-            .then((res) => {
-                console.log(res)
-                accountService.saveToken(res.data.body.token)
+
+        accountService.loginUser(credentials)
+            .then((response) => {
+                accountService.saveToken(response.data.body.token)
+                dispatch({
+                    type: 'Login/setToken',
+                    payload: response.data.body.token
+                })
                 navigate('/admin/AuthUser')
             })
-            .catch((err) => { console.log(err) });
+            .catch((error) => {
+                console.log(error)
+            })
     }
 
     return (

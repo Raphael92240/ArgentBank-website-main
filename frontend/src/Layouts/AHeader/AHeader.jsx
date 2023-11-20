@@ -1,9 +1,17 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import Logo from '@/Assets/Images/argentBankLogo.png';
+
+import { useSelector } from 'react-redux';
+import { SelectorUser } from '@/_Redux/Selector/SelectorUser.jsx';
+
 import './header.css';
 
 const AHeader = () => {
+
+    const { userName } = useSelector(SelectorUser)
+
+
     return (
         <header>
             <nav className="main-nav">
@@ -17,7 +25,9 @@ const AHeader = () => {
                 </NavLink>
                 <div>
                     <NavLink to="/admin/AuthUser" className="main-nav-item" ><i className="fa fa-user-circle"></i>
-                        Tony</NavLink>
+
+                        {userName}
+                    </NavLink>
 
                     <NavLink to="/Home" className="main-nav-item" ><i className="fa fa-sign-out"></i>
                         Sign Out</NavLink>

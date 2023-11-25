@@ -50,11 +50,11 @@ const SignIn = () => {
                 <form onSubmit={onSubmit}>
                     <div className="input-wrapper">
                         <label htmlFor="username">Username</label>
-                        <input type="text" name='email' id="username" value={credentials.email} onChange={onChangelogin} />
+                        <input type="text" name='email' id="username" value={credentials.email} onChange={onChangelogin} required />
                     </div>
                     <div className="input-wrapper">
                         <label htmlFor="password">Password</label>
-                        <input type="password" name='password' id="password" value={credentials.password} onChange={onChangelogin} />
+                        <input type="password" name='password' id="password" value={credentials.password} onChange={onChangelogin} required />
                     </div>
                     <div className="input-remember">
                         <input type="checkbox" id="remember-me" />

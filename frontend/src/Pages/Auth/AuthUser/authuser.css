@@ -11,6 +11,10 @@
     margin-bottom: 2rem;
 }
 
+.displaytransaction {
+    padding-bottom: 2em;
+}
+
 .formeditcontent {
     display: flex;
     flex-direction: column;

@@ -60,7 +60,7 @@ const SignIn = () => {
                         <input type="checkbox" id="remember-me" />
                         <label htmlFor="remember-me">Remember me</label>
                     </div>
-                    <Link to="/admin/AuthUser" className="sign-in-button">Sign In</Link>
+
                     <button className="sign-in-button">Sign In</button>
                 </form>
             </div>

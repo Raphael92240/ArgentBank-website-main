@@ -30,9 +30,6 @@ const AuthUser = () => {
         setfirstname(decodedToken.firstName)
         setlastname(decodedToken.lastName)
 
-        console.log(decodedToken)
-
-
     }
 
     const update = async (newUserName) => {
@@ -64,7 +61,7 @@ const AuthUser = () => {
     }
 
     return (
-        <div className="main bg-dark">
+        <main className="main bg-dark displaytransaction">
             <div className="header">
                 {
                     !edit &&
@@ -79,7 +76,7 @@ const AuthUser = () => {
                         <h1>Welcome back</h1>
                         <section className='update'>
                             <div className='input-update'>
-                                <input type='text' value={newUserName} onChange={(e) => setnewUserName(e.target.value)} />
+                                <input type='text' onChange={(e) => setnewUserName(e.target.value)} />
                                 <input type='text' value={firstname} disabled />
                                 <input type='text' value={lastname} disabled />
                             </div>
@@ -104,7 +101,7 @@ const AuthUser = () => {
                 ))
             }
 
-        </div>
+        </main>
 
     );
 };

@@ -8,12 +8,14 @@ export const ReducerLogin = createSlice({
     name: "Login",
     initialState,
     reducers: {
-        // action : (type ''; payload: tout ce quon veut )
         setToken: (state, action) => {
             state.token = action.payload
         },
-        loggout: (state) => {
+        loggout: (state, action) => {
             state.token = null
         },
     }
 })
+
+export const { setToken, loggout } = ReducerLogin.actions;
+export default ReducerLogin.reducer;

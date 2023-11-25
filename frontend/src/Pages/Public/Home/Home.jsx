@@ -1,7 +1,7 @@
 import React from 'react';
-import iconchat from '@/Assets/Images/icon-chat.png';
-import iconmoney from '@/Assets/Images/icon-money.png';
-import iconsecurity from '@/Assets/Images/icon-security.png';
+import iconchat from '@/Assets/Images/icon-chat.webp';
+import iconmoney from '@/Assets/Images/icon-money.webp';
+import iconsecurity from '@/Assets/Images/icon-security.webp';
 import Hero from '@/Components/hero/Hero.jsx';
 import Card from '@/Components/card/Card.jsx';
 
